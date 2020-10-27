@@ -30,8 +30,6 @@
  *  $Id: MissingClosingQuoteException.cs 3 2007-07-29 13:32:10Z palotas $
  */
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Runtime.Serialization;
 using Plossum.Resources;
 

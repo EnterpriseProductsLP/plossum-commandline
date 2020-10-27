@@ -29,7 +29,7 @@
  *  
  *  $Id: QuotationInfo.cs 3 2007-07-29 13:32:10Z palotas $
  */
-using System;
+
 using SCG = System.Collections.Generic;
 using C5;
 
@@ -109,7 +109,7 @@ namespace Plossum.CommandLine
         public char EscapeCharacter(char code)
         {
             char replacement;
-            if (!mEscapeCodes.Find(code, out replacement))
+            if (!mEscapeCodes.Find(ref code, out replacement))
                 return code;
             else
                 return replacement;

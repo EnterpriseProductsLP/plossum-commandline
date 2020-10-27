@@ -30,7 +30,6 @@
  *  $Id: AssemblyInfo.cs 3 2007-07-29 13:32:10Z palotas $
  */
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System;
 using System.Security.Permissions;

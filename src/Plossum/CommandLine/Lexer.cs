@@ -536,8 +536,9 @@ namespace Plossum.CommandLine
         private bool IsAssignmentCharacter(int ch)
         {
             OptionStyles optionStyle;
-            return mAssignmentCharacters.Find((char)ch, out optionStyle) && OptionStyleManager.IsAnyEnabled(optionStyle, EnabledOptionStyles)
-                && OptionStyleManager.IsAnyEnabled(optionStyle, mCurrentOptionStyle);
+            var character = (char) ch;
+            return mAssignmentCharacters.Find(ref character, out optionStyle) && OptionStyleManager.IsAnyEnabled(optionStyle, EnabledOptionStyles)
+                                                                              && OptionStyleManager.IsAnyEnabled(optionStyle, mCurrentOptionStyle);
         }
 
         /// <summary>
@@ -554,7 +555,7 @@ namespace Plossum.CommandLine
         {
             QuotationInfo quotationInfo;
 
-            if (IsEscapeCharacter(LA(1)) && mQuotations.Find(currentQuote, out quotationInfo) &&
+            if (IsEscapeCharacter(LA(1)) && mQuotations.Find(ref currentQuote, out quotationInfo) &&
                 LA(2) != -1 && quotationInfo.IsEscapeCode((char)LA(2)))
             {
                 char replacement = quotationInfo.EscapeCharacter((char)LA(2)); 

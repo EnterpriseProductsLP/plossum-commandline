@@ -1,6 +1,5 @@
 using System;
 using Plossum.CommandLine;
-using Plossum;
 
 namespace Ex1
 {
@@ -45,7 +44,10 @@ namespace Ex1
                 Console.WriteLine(parser.UsageInfo.GetErrorsAsString(78));
                 return -1;
             }
+
             Console.WriteLine("Hello {0}!", options.Name);
+
+            Console.ReadKey();
 
             return 0;
         }

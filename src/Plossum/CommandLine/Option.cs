@@ -31,9 +31,7 @@
  */
 using System;
 using SCG = System.Collections.Generic;
-using System.Text;
 using System.Reflection;
-using Plossum.CommandLine;
 using C5;
 using System.Globalization;
 using System.Diagnostics;
@@ -164,7 +162,7 @@ namespace Plossum.CommandLine
             // Find the group (if any) that this option belongs to in the list of available option groups
             if (attribute.GroupId != null)
             {
-                if (!optionGroups.Find(new Fun<OptionGroup, bool>(
+                if (!optionGroups.Find(new Func<OptionGroup, bool>(
                     delegate(OptionGroup searchGroup)
                     {
                         return attribute.GroupId.Equals(searchGroup.Id);
