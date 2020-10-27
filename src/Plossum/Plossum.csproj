@@ -42,9 +42,6 @@
     <DocumentationFile>..\..\doc\api\plossum.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="C5, Version=2.5.0.0, Culture=neutral, PublicKeyToken=282361b99ded7e8e, processorArchitecture=MSIL">
-      <HintPath>..\packages\C5.2.5.3\lib\net40\C5.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -112,7 +109,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <PackageReference Include="C5">
+      <Version>2.5.3</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
