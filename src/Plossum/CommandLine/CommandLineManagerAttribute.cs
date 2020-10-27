@@ -30,8 +30,6 @@
  *  $Id: CommandLineManagerAttribute.cs 4 2007-07-30 18:32:30Z palotas $
  */
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Reflection;
 
 namespace Plossum.CommandLine

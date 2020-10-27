@@ -29,9 +29,6 @@
  *  
  *  $Id: ColumnInfo.cs 7 2007-08-04 12:02:15Z palotas $
  */
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Plossum
 {
