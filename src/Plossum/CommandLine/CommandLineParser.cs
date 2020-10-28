@@ -260,7 +260,8 @@ namespace Plossum.CommandLine
                 if (entry.Value != null && entry.Value.Count > 0)
                 {
                     IOption ioption;
-                    if (!mOptions.Find(entry.Key, out ioption))
+                    var k = entry.Key;
+                    if (!mOptions.Find(ref k, out ioption))
                         throw new InvalidOperationException(CommandLineStrings.InternalErrorOptionSpecifiedInProhibitionDoesNotExist);
 
                     Option option;
@@ -272,12 +273,13 @@ namespace Plossum.CommandLine
                     foreach (string name in entry.Value)
                     {
                         IOption target;
-                        if (!mOptions.Find(name, out target))
+                        var n = name;
+                        if (!mOptions.Find(ref n, out target))
                         {
                             throw new AttributeException(
                                 String.Format(CultureInfo.CurrentUICulture, 
                                 CommandLineStrings.UndefinedOption0ReferencedFromProhibitionSectionOfOption1,
-                                name, option.Name));
+                                n, option.Name));
                         }
 
                         if (target.IsAlias)
@@ -768,7 +770,7 @@ namespace Plossum.CommandLine
         public QuotationInfo GetQuotationInfo(char quotationMark)
         {
             QuotationInfo quotationInfo;
-            if (!mQuotations.Find(quotationMark, out quotationInfo))
+            if (!mQuotations.Find(ref quotationMark, out quotationInfo))
                 return null;
             return quotationInfo;
         }
@@ -839,9 +841,10 @@ namespace Plossum.CommandLine
 
             OptionNameToken optionNameToken = (OptionNameToken)GetNextToken();
             IOption option;
-            if (!mOptions.Find(optionNameToken.Name, out option))
+            var n = optionNameToken.Name;
+            if (!mOptions.Find(ref n, out option))
             {
-                ReportOptionError(ParseErrorCodes.UnknownOption, optionNameToken.Text, CommandLineStrings.UnknownOption0, optionNameToken.Name);
+                ReportOptionError(ParseErrorCodes.UnknownOption, optionNameToken.Text, CommandLineStrings.UnknownOption0, n);
                 
                 // Skip an assignment token and value if it follows
                 if (LA1 != null && LA1.TokenType == Token.TokenTypes.AssignmentToken)

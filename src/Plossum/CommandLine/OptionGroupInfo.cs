@@ -154,7 +154,7 @@ namespace Plossum.CommandLine
         public OptionInfo GetOption(string optionName)
         {
             OptionInfo description;
-            if (!mOptions.Find(optionName, out description))
+            if (!mOptions.Find(ref optionName, out description))
                 return null;
             return description;
         }

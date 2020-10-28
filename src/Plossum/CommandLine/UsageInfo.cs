@@ -189,7 +189,7 @@ namespace Plossum.CommandLine
         public OptionInfo GetOption(string name)
         {
             OptionInfo description;
-            if (!mOptions.Find(name, out description))
+            if (!mOptions.Find(ref name, out description))
             {
                 // Search through all groups for this option
                 foreach (OptionGroupInfo gdesc in mGroups.Values)
@@ -211,7 +211,7 @@ namespace Plossum.CommandLine
         public OptionGroupInfo GetGroup(string id)
         {
             OptionGroupInfo desc;
-            if (!mGroups.Find(id, out desc))
+            if (!mGroups.Find(ref id, out desc))
                 return null;
             return desc;
         }
