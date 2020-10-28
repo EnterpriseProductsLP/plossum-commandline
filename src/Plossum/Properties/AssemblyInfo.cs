@@ -39,7 +39,7 @@ using System.Resources;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Plossum CommandLine")]
-[assembly: AssemblyDescription("A .NET 2.0 library for parsing command lines")]
+[assembly: AssemblyDescription("A .NET Core library for parsing command lines")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Peter Palotas")]
 [assembly: AssemblyProduct("Plossum ComandLine")]
